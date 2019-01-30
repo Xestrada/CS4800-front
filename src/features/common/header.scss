@@ -1,0 +1,77 @@
+//Smallest is 327
+.logo {
+    display: block;
+    width: 5em;
+    line-height: 1;
+    margin: 0 1% 0 0;
+}
+.navHolder{
+    border-bottom: 0.1rem solid black;
+    background-color: #9099A2;
+    .nav-bar{
+        width: 100%;
+        .navItem {
+            font-size: 0.9em;
+            line-height: 1em;
+            .nav-link{
+                color: black;
+                &:hover{
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .logo {
+        width: 6em;
+    }
+    .nav-bar{
+        .navItem {
+            font-size: 0.9em;
+            margin-right: 2em;
+            .nav-link{
+                color: black;
+                &:hover{
+                    color: gray;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1024px) {
+    .logo {
+        width: 10em;
+    }
+    .nav-bar{
+        .navItem {
+            font-size: 1.5em;
+            margin-right: 2em;
+            .nav-link{
+                color: black;
+                &:hover{
+                    color: gray;
+                }
+            }
+        }
+    }
+
+}
+@media screen and (min-width: 1080px) {
+    .logo {
+        width: 8em;
+    }
+    .nav-bar{
+        .navItem {
+            font-size: 1.0em;
+            margin-right: 2em;
+            .nav-link{
+                color: black;
+                &:hover{
+                    color: gray;
+                }
+            }
+        }
+    }
+}

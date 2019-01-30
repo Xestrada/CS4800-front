@@ -1,0 +1,54 @@
+.sideGrid{
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+}
+
+.pageNav{
+    display: none;
+    background-color: #B1797A;
+    color: white;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .pageNav{
+        width: 100%;
+        height: 25rem;
+        display: block;
+        min-width: 150px;
+
+        h4{
+            font-weight: bold;
+        }
+
+        h6{
+            margin: 1rem 0 1rem 0;
+            font-size: 0.8em;
+        }
+
+        h6:hover {
+            cursor: pointer;
+        }
+
+        .selected {
+            font-style: italic;
+            text-decoration: underline;
+        }
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .pageNav{
+        width: 90%;
+        height: 30rem;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .pageNav{
+        width: 100%;
+        height: 35rem;
+    }
+}

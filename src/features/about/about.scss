@@ -1,0 +1,27 @@
+.about-root{
+    .about-box{
+        width: 84%;
+        margin: auto;
+        background: rgba(186, 139, 139, 0.8);
+        .img-box{
+            width: 30%;
+            margin: auto;
+            padding: 2em 0 .5em 0;
+            img{
+                border: 6px solid transparent;
+                border-image: linear-gradient(to right, rgb(255, 255, 255) , rgb(255, 255, 255),rgb(255, 255, 255) );
+                border-image-slice: 1;
+                display: block;
+                width: 100%;
+            }
+
+        }
+        p{ 
+            border: 6px solid transparent;
+            text-align: center;
+            width: 50%;
+            margin: auto;
+            font-size: .96rem;
+        }
+    }
+}
