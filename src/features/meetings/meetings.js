@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
+import { Table } from 'reactstrap';
 import Header from '../common/header';
 
 export class DefaultPage extends Component {
@@ -11,10 +12,75 @@ export class DefaultPage extends Component {
     actions: PropTypes.object.isRequired,
   };
 
+  constructor(props){
+    super(props)
+    this.state = {
+
+    };
+
+  }
+
+  componentDidMount(){
+    this.props.actions.getMeetings();
+  }
+
   render() {
+
+    const items = this.props.meetings.data;
+    const loadingMessage = (<h3>Loading ...</h3>)
+    const errorMessage = (<h3>Error</h3>)
+
+    console.log(items);
+
+    const itemTable = items != undefined ? items.map(item => {
+      return(
+        <tr key = {item.id}>
+          <th scope="row">
+            {item.id}
+          </th>
+          <td>
+            {item.meeting_time}
+          </td>
+          <td>
+            {item.date}
+          </td>
+          <td>
+            {item.attended.map(attendee => {
+              return (
+                <ul> - {attendee} </ul>
+              )
+            })}
+          </td>
+          <td>
+            {item.topics.map(topic => {
+                return (
+                  <ul> * {topic} </ul>
+                )
+              })}
+          </td>
+        </tr>
+      )
+    }) : null;
+
     return (
       <div className = "meetings-default-page">
         <Header />
+        {this.props.meetings.getMeetingsPending ? loadingMessage : null}
+        {this.props.meetings.getMeetingsError ? errorMessage : null}
+        <Table striped>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Meeting Time</th>
+            <th>Date</th>
+            <th>Attended</th>
+            <th>Topics Discussed</th>
+          </tr>
+        </thead>
+        <tbody>
+          {itemTable}
+        </ tbody>
+        </ Table>
       </div>
     );
   }
