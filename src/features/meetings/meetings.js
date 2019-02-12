@@ -45,18 +45,58 @@ export class DefaultPage extends Component {
             {item.date}
           </td>
           <td>
-            {item.attended.map(attendee => {
-              return (
-                <ul> - {attendee} </ul>
-              )
-            })}
+            {item != undefined && 
+              item.attended.map(attendee => {
+                return (
+                  <ul> - {attendee} </ul>
+                )
+              })
+            }
           </td>
           <td>
-            {item.topics.map(topic => {
+            {item != undefined && 
+              item.topics.map(topic => {
                 return (
                   <ul> * {topic} </ul>
                 )
-              })}
+              })
+            }
+          </td>
+          <td>
+            {item != undefined && 
+              Object.keys(item.todo).map(key => {
+                return(
+                  <div>
+                    <ul>{key}:</ul>
+                    <div>
+                      {item.todo[key].map(task => {
+                        return (
+                          <ul> - {task} </ul>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )
+              })
+            }
+          </td>
+          <td>
+            {item != undefined && 
+              Object.keys(item.completed).map(key => {
+                return(
+                  <div>
+                    <ul>{key}:</ul>
+                    <div>
+                      {item.completed[key].map(task => {
+                        return (
+                          <ul> - {task} </ul>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )
+              })
+            }
           </td>
         </tr>
       )
@@ -75,6 +115,8 @@ export class DefaultPage extends Component {
             <th>Date</th>
             <th>Attended</th>
             <th>Topics Discussed</th>
+            <th>To-Do</th>
+            <th>Completed</th>
           </tr>
         </thead>
         <tbody>
