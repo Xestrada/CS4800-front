@@ -45,7 +45,7 @@ export class DefaultPage extends Component {
             {item.date}
           </td>
           <td>
-            {item != undefined && 
+            {item != undefined && Array.isArray(item.attended) &&
               item.attended.map(attendee => {
                 return (
                   <ul> - {attendee} </ul>
@@ -54,7 +54,7 @@ export class DefaultPage extends Component {
             }
           </td>
           <td>
-            {item != undefined && 
+            {item != undefined && Array.isArray(item.topics) && 
               item.topics.map(topic => {
                 return (
                   <ul> * {topic} </ul>
@@ -63,7 +63,7 @@ export class DefaultPage extends Component {
             }
           </td>
           <td>
-            {item != undefined && 
+            {item != undefined && typeof item.todo == 'object' && 
               Object.keys(item.todo).map(key => {
                 return(
                   <div>
@@ -81,7 +81,7 @@ export class DefaultPage extends Component {
             }
           </td>
           <td>
-            {item != undefined && 
+            {item != undefined && typeof item.completed == 'object' && 
               Object.keys(item.completed).map(key => {
                 return(
                   <div>
