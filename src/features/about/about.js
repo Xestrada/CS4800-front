@@ -33,6 +33,11 @@ class About extends Component {
             <td>Issac</td>
             <td>Kim</td>
           </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Grant</td>
+            <td>Okamoto</td>
+          </tr>
         </tbody>
       </Table>
       <h2>GitHub Links:</h2>
