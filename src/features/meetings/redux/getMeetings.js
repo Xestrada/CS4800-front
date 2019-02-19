@@ -17,7 +17,7 @@ export function getMeetings() {
       .then(function(createdJson){
         dispatch({
           type: MEETINGS_GET_MEETINGS_SUCCESS,
-          data: createdJson,
+          data: createdJson.meetings,
         });
       })
       .catch(function(error){

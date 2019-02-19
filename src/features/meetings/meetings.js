@@ -103,8 +103,6 @@ export class DefaultPage extends Component {
     return (
       <div className = "meetings-default-page">
         <Header />
-        {this.props.meetings.getMeetingsPending ? loadingMessage : null}
-        {this.props.meetings.getMeetingsError ? errorMessage : null}
         <Table striped>
         <thead>
           <tr>
@@ -121,6 +119,8 @@ export class DefaultPage extends Component {
           {itemTable}
         </ tbody>
         </ Table>
+        {this.props.meetings.getMeetingsPending ? loadingMessage : null}
+        {this.props.meetings.getMeetingsError ? errorMessage : null}
       </div>
     );
   }
