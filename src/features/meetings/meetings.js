@@ -30,8 +30,6 @@ export class DefaultPage extends Component {
     const loadingMessage = (<h3>Loading ...</h3>)
     const errorMessage = (<h3>Error</h3>)
 
-    console.log(items);
-
     const itemTable = items != undefined ? items.map(item => {
       return(
         <tr key = {item.id}>
@@ -48,7 +46,7 @@ export class DefaultPage extends Component {
             {item != undefined && Array.isArray(item.attended) &&
               item.attended.map(attendee => {
                 return (
-                  <ul> - {attendee} </ul>
+                  <ul key={attendee}> - {attendee} </ul>
                 )
               })
             }
@@ -57,7 +55,7 @@ export class DefaultPage extends Component {
             {item != undefined && Array.isArray(item.topics) && 
               item.topics.map(topic => {
                 return (
-                  <ul> * {topic} </ul>
+                  <ul key={topic}> * {topic} </ul>
                 )
               })
             }
@@ -66,7 +64,7 @@ export class DefaultPage extends Component {
             {item != undefined && typeof item.todo == 'object' && 
               Object.keys(item.todo).map(key => {
                 return(
-                  <div>
+                  <div key={key}>
                     <ul>{key}:</ul>
                     <div>
                       {item.todo[key].map(task => {
@@ -84,7 +82,7 @@ export class DefaultPage extends Component {
             {item != undefined && typeof item.completed == 'object' && 
               Object.keys(item.completed).map(key => {
                 return(
-                  <div>
+                  <div key={key}>
                     <ul>{key}:</ul>
                     <div>
                       {item.completed[key].map(task => {
