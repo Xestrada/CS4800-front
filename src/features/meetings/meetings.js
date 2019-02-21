@@ -73,6 +73,7 @@ export class DefaultPage extends Component {
                         )
                       })}
                     </div>
+                    <hr />
                   </div>
                 )
               })
@@ -91,6 +92,7 @@ export class DefaultPage extends Component {
                         )
                       })}
                     </div>
+                    <hr />
                   </div>
                 )
               })
@@ -104,7 +106,7 @@ export class DefaultPage extends Component {
       <div className = "meetings-default-page">
         <Header />
         <Table striped>
-        <thead>
+        <thead className = 'meetingHead'>
           <tr>
             <th>#</th>
             <th>Meeting Time</th>
