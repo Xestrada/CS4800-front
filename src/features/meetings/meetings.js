@@ -61,13 +61,13 @@ export class DefaultPage extends Component {
             }
           </td>
           <td>
-            {item != undefined && typeof item.todo == 'object' && 
-              Object.keys(item.todo).map(key => {
+            {item != undefined && typeof item.completed == 'object' && 
+              Object.keys(item.completed).map(key => {
                 return(
                   <div key={key}>
                     <ul>{key}:</ul>
                     <div>
-                      {item.todo[key].map(task => {
+                      {item.completed[key].map(task => {
                         return (
                           <ul> - {task} </ul>
                         )
@@ -80,13 +80,13 @@ export class DefaultPage extends Component {
             }
           </td>
           <td>
-            {item != undefined && typeof item.completed == 'object' && 
-              Object.keys(item.completed).map(key => {
+            {item != undefined && typeof item.todo == 'object' && 
+              Object.keys(item.todo).map(key => {
                 return(
                   <div key={key}>
                     <ul>{key}:</ul>
                     <div>
-                      {item.completed[key].map(task => {
+                      {item.todo[key].map(task => {
                         return (
                           <ul> - {task} </ul>
                         )
@@ -113,8 +113,8 @@ export class DefaultPage extends Component {
             <th>Date</th>
             <th>Attended</th>
             <th>Topics Discussed</th>
-            <th>To-Do</th>
             <th>Completed</th>
+            <th>To-Do</th>
           </tr>
         </thead>
         <tbody>
